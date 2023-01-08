@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.pifsportapp.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class LoginFragment : Fragment() {
 
@@ -30,11 +31,9 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //super.onViewCreated(view, savedInstanceState)
         btnLogin = view.findViewById(R.id.btn_login)
-
         btnLogin.setOnClickListener{
             findNavController().navigate(R.id.action_loginFragment_to_playFragment)
-
-
         }
+
     }
 }

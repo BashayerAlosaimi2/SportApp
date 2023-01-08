@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.pifsportapp.ProfileFragment"
+        android:name="com.example.pifsportapp.ui.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <dialog

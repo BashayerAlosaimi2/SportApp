@@ -1,100 +1,151 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     style="@style/BottomSheetDialogTheme"
     android:orientation="vertical"
     >
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/padel_photo"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create New Pdel Game"
-        android:layout_margin="20dp"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:layout_gravity="center"/>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/padel_photo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:text="Create New Pdel Game"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:background="@drawable/tv_bacgraound"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:padding="4dp"
+                        android:text="DD/MM/YY"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_calender"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="@drawable/calendar" />
+
+            </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
+            android:layout_margin="3dp"
+            >
 
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/calendar"/>
-            <TextView
-                android:layout_margin="10dp"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:padding="4dp"
-                android:text="DD/MM/YY"/>
+                >
+
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:background="@drawable/tv_bacgraound"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="4dp"
+                    android:text="00:00"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/iv_clock"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/clock" />
         </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="3dp">
 
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/clock"/>
-            <TextView
-                android:layout_margin="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:padding="4dp"
-                android:text="00:00"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_location"
+                    android:background="@drawable/tv_bacgraound"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="4dp"
+                    android:hint="Write the location"
+                    android:textSize="20dp" />
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/map" />
+
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
 
-
-    <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/map"/>
-            <TextView
-                android:layout_margin="10dp"
+
+            <Button
+                android:id="@+id/btn_create"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:padding="4dp"
-                android:text="Write the location"/>
+                android:textColor="@color/shadowGray"
+                android:backgroundTint="@color/buttonColor"
+                android:layout_margin="30dp"
+                android:text="Create" />
         </LinearLayout>
+
+
     </LinearLayout>
-</LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

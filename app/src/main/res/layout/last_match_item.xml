@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/background_card"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="17dp"
+    app:cardElevation="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/iv_p1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/man"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_p2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/man2"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_p1"
+            app:layout_constraintTop_toTopOf="@id/iv_p1" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/more"
+            app:layout_constraintStart_toEndOf="@+id/iv_p3"
+            app:layout_constraintTop_toTopOf="@+id/iv_p1" />
+        <ImageView
+            android:id="@+id/iv_p3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/woman"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_p2"
+            app:layout_constraintTop_toTopOf="@id/iv_p1" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/buttonColor"
+            android:gravity="center"
+            android:text="Enter your scour"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon_group"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/clock"
+            android:padding="3dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_p1" />
+
+        <ImageView
+            android:id="@+id/icon_calender"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/calendar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon_group" />
+
+        <ImageView
+            android:id="@+id/icon_map"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/map"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/icon_calender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon_calender" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="5:00"
+            android:textColor="@color/shadowGray"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_group"
+            app:layout_constraintStart_toEndOf="@+id/icon_group"
+            app:layout_constraintTop_toTopOf="@+id/icon_group" />
+        <TextView
+            android:id="@+id/tv_calender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Monday, 2 Des 2023"
+            android:textColor="@color/shadowGray"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_calender"
+            app:layout_constraintStart_toEndOf="@+id/icon_calender"
+            app:layout_constraintTop_toTopOf="@+id/icon_calender" />
+
+        <TextView
+            android:id="@+id/tv_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Riyadh, Abduelah bin Abdlaziz"
+            android:textColor="@color/shadowGray"
+            app:layout_constraintBottom_toBottomOf="@+id/icon_map"
+            app:layout_constraintStart_toEndOf="@+id/icon_map"
+            app:layout_constraintTop_toTopOf="@+id/icon_map" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
