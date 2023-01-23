@@ -1,33 +1,24 @@
 package com.example.pifsportapp.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.pifsportapp.R
+import com.example.pifsportapp.adapter.MatchDetailsAdapter
+import com.example.pifsportapp.data.UserData
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MatchDetailsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MatchDetailsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+    lateinit var usersRV: RecyclerView
+    lateinit var matchDetailsAdapter: MatchDetailsAdapter
+    lateinit var usersList: ArrayList<UserData>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -36,25 +27,45 @@ class MatchDetailsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_match_details, container, false)
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MatchDetailsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MatchDetailsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    @SuppressLint("NotifyDataSetChanged")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        // on below line we are initializing
+        // our views with their ids.
+        usersRV = view.findViewById(R.id.rv_users)
+
+        // on below line we are initializing our list
+        usersList = ArrayList()
+
+        // on below line we are creating a variable
+        // for our grid layout manager and specifying
+        // column count as 2
+        val layoutManager = GridLayoutManager(context, 4)
+
+        usersRV.layoutManager = layoutManager
+
+        // on below line we are initializing our adapter
+        matchDetailsAdapter = MatchDetailsAdapter(usersList)
+
+        // on below line we are setting
+        // adapter to our recycler view.
+        usersRV.adapter = matchDetailsAdapter
+
+        // on below line we are adding data to our list
+        usersList.add(UserData("Ahmad", R.drawable.user))
+        usersList.add(UserData("shaden", R.drawable.woman))
+        usersList.add(UserData("Sami", R.drawable.man))
+        usersList.add(UserData("Farah", R.drawable.man2))
+        usersList.add(UserData("Eman", R.drawable.user2))
+
+        // on below line we are notifying adapter
+        // that data has been updated.
+        matchDetailsAdapter.notifyDataSetChanged()
+
+
     }
+
 }

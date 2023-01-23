@@ -7,7 +7,10 @@
     android:layout_height="300dp"
     android:layout_margin="4dp"
     app:cardCornerRadius="17dp"
-    app:cardElevation="10dp">
+    app:cardElevation="2dp"
+    app:cardMaxElevation="3dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,7 +23,7 @@
             android:layout_height="30dp"
             android:layout_marginStart="76dp"
             android:layout_marginTop="28dp"
-            android:src="@drawable/man"
+            android:src="@drawable/user_dark"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +31,7 @@
             android:id="@+id/iv_p2"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/man2"
+            android:src="@drawable/user_dark"
             android:layout_marginLeft="10dp"
             app:layout_constraintStart_toEndOf="@+id/iv_p1"
             app:layout_constraintTop_toTopOf="@id/iv_p1" />
@@ -37,18 +40,19 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/more"
+            android:src="@drawable/user_dark"
             app:layout_constraintStart_toEndOf="@+id/iv_p3"
             app:layout_constraintTop_toTopOf="@+id/iv_p1" />
         <ImageView
             android:id="@+id/iv_p3"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/woman"
+            android:src="@drawable/user_dark"
             android:layout_marginLeft="10dp"
             app:layout_constraintStart_toEndOf="@+id/iv_p2"
             app:layout_constraintTop_toTopOf="@id/iv_p1" />
         <Button
+            android:id="@+id/btn_join"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"

@@ -4,21 +4,38 @@ buildscript {
 
     repositories {
         google()
+        jcenter()
+
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
 
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.2.1"
+        classpath "com.android.tools.build:gradle:4.2.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-    }
-}
+        //pralize
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0")
+        //dagger:hilt
+       // classpath "com.google.dagger:hilt-android-gradle-plugin:2.28.3-alpha"
 
+
+        // nav
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
+
+
+    }
+
+
+}
 plugins {
+    // id("kotlin-parcelize")
+
     id 'com.android.application' version '7.3.1' apply false
     id 'com.android.library' version '7.3.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
+//   id "org.jetbrains.kotlin.plugin.parcelize"
 }
-
-
-

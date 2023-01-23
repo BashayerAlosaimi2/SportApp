@@ -10,7 +10,7 @@
         android:id="@+id/splashLogo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/pif_logo"
+        android:src="@drawable/white_logo"
         android:layout_gravity="center"/>
 
 </FrameLayout>

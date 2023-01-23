@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".MainActivity">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
 
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@drawable/top_profile"
-        android:backgroundTint="#042F12"
+        android:backgroundTint="@color/background_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,11 +28,19 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="30dp"
-        android:src="@drawable/user"
+        android:src="@drawable/user_dark"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="user name"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/im_user"
+        app:layout_constraintStart_toEndOf="@+id/im_user"
+        app:layout_constraintTop_toTopOf="@+id/im_user" />
     <TextView
         android:id="@+id/tv_topThree"
         android:layout_width="wrap_content"
@@ -38,13 +51,13 @@
         android:text="Top Three"
         android:textColor="@color/shadowGray"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cv_ranking"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
 
     <androidx.cardview.widget.CardView
 
-        android:id="@+id/cardView"
+        android:id="@+id/cv_ranking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -77,7 +90,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="20dp"
-                android:src="@drawable/user"
+                android:src="@drawable/user_dark"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -85,8 +98,8 @@
                 android:id="@+id/imCv_user2"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/user"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/user_dark"
                 app:layout_constraintStart_toStartOf="@+id/imCv_user1"
                 app:layout_constraintTop_toBottomOf="@+id/imCv_user1" />
 
@@ -94,9 +107,9 @@
                 android:id="@+id/imCv_user3"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:src="@drawable/user"
+                android:src="@drawable/user_dark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/imCv_user2"
                 app:layout_constraintTop_toBottomOf="@+id/imCv_user2" />
@@ -142,13 +155,13 @@
         android:text="Compete with the others !"
         android:textColor="@color/shadowGray"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintStart_toStartOf="@+id/cv_ranking"
+        app:layout_constraintTop_toBottomOf="@+id/cv_ranking" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvNewMatch"
+        android:id="@+id/rvCreatedMatch"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="200dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
@@ -160,17 +173,16 @@
         android:id="@+id/tv_lastMatches"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="Compete with the others !"
         android:textColor="@color/shadowGray"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/rvNewMatch" />
+        app:layout_constraintStart_toStartOf="@+id/cv_ranking"
+        app:layout_constraintTop_toBottomOf="@+id/rvCreatedMatch" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLastMatch"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="200dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
@@ -179,6 +191,49 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_lastMatches" />
 
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lastMatches">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include layout="@layout/new_match_shrimmer_item" />
+
+            <include layout="@layout/new_match_shrimmer_item" />
+            <include layout="@layout/new_match_shrimmer_item" />
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_topThree">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include layout="@layout/ranking_shimmering" />
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
